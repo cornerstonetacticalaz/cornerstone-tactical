@@ -1,376 +1,364 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Cornerstone Tactical</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cornerstone Tactical</title>
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-body {
-  background: #0f0f10;
-  color: #ffffff;
-}
-
-/* HEADER */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 40px;
-  background: rgba(0,0,0,0.7);
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  backdrop-filter: blur(10px);
-}
-
-.logo {
-  font-size: 20px;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin-left: 20px;
-  font-size: 14px;
-}
-
-nav a:hover {
-  color: #caa24a;
-}
-
-/* HERO */
-.hero {
-  position: relative;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background: url("hero.jpg") center top / contain no-repeat;
-  background-color: #0f0f10;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.75);
-}
-
-.hero-content {
-  position: relative;
-  max-width: 800px;
-}
-
-.hero h1 {
-  font-size: 48px;
-  margin-bottom: 15px;
-}
-
-.hero p {
-  font-size: 18px;
-  opacity: 0.9;
-  margin-bottom: 25px;
-}
-
-/* BUTTONS */
-.btn {
-  display: inline-block;
-  padding: 12px 25px;
-  background: #caa24a;
-  color: black;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: 0.25s;
-}
-
-.btn:hover {
-  background: #e0bb5a;
-  transform: scale(1.03);
-}
-
-.btn-instagram {
-  background: #E1306C;
-  color: white;
-  padding: 12px 22px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.btn-instagram:hover {
-  background: #C13584;
-  transform: translateY(-2px);
-}
-
-/* CARDS */
-.service-card {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-}
-
-/* SECTIONS */
-section {
-  scroll-margin-top: 80px;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-
-  header {
-    padding: 12px 15px;
-  }
-
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-  }
-
-  nav a {
-    font-size: 11px;
-    margin-left: 0;
-  }
-
-  /* Hide the Instagram button in the navigation on mobile */
-  nav .btn-instagram {
-    display: none;
-  }
-
-  .hero h1 {
-    font-size: 34px;
-  }
-
-}
-.mobile-social{
-    display:none;
-}
-
-@media (max-width:768px){
-
-.mobile-social{
-    position:fixed;
-    bottom:25px;
-    left:50%;
-    transform:translateX(-50%);
-    display:flex;
-    z-index:9999;
-}
-
-.mobile-social a{
-    width:70px;
-    height:70px;
-    background:#ffffff;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:#111;
-    text-decoration:none;
-    box-shadow:
-        10px 10px 25px rgba(0,0,0,.25),
-       -8px -8px 18px rgba(255,255,255,.65);
-    transition:.25s;
-}
-
-.mobile-social a:hover{
-    transform:translateY(-5px);
-    box-shadow:0 15px 35px rgba(0,0,0,.35);
-}
-
-.mobile-social svg{
-    width:32px;
-    height:32px;
-}
-
-}
-/* FAQ */
-details {
-  margin-bottom: 15px;
-  background: #1a1a1a;
-  padding: 15px;
-  border-radius: 8px;
-}
-summary {
-  cursor: pointer;
-  font-weight: bold;
-}
-</style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-
-<!-- HEADER -->
 <header>
-  <div class="logo">Cornerstone Tactical</div>
-  <nav>
-    <a href="#pricing">Services</a>
-    <a href="#about">About</a>
-    <a href="#transfer-process">FFL Transfers</a>
-    <a href="#contact">Contact</a>
-    <a href="#faq">FAQ</a>
-    <a href="https://instagram.com/cornerstone_tactical" target="_blank" class="btn-instagram">
-      Instagram
-    </a>
-  </nav>
+
+    <div class="logo">
+        Cornerstone Tactical
+    </div>
+
+    <button class="menu-toggle" aria-label="Toggle menu">
+        ☰
+    </button>
+
+    <nav>
+
+        <a href="#about">About</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#process">Transfer Process</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+<a class="ig-button" href="https://instagram.com/cornerstone_tactical" target="_blank">
+    Instagram
+</a>
+
+    </nav>
+
 </header>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-content">
-    <h1>Firearm Transfers Made Simple</h1>
-    <p>Fast, compliant, and professional FFL transfer services in Buckeye, Arizona. By appointment only.</p>
-    <a href="#transfer-process" class="btn">Start Transfer</a>
-  </div>
+<section class="hero" id="home">
+
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+
+        <!-- Replace with your emblem -->
+        <img src="images/emblem.png" class="emblem" alt="">
+
+        <h1>Cornerstone Tactical</h1>
+
+        <h2>Veteran Owned • FFL 07 Manufacturer</h2>
+
+        <p>
+            Secure firearm transfers, manufacturing, and professional firearms
+            services by appointment in Buckeye, Arizona.
+        </p>
+
+        <a href="#process" class="button">
+    Start Your Transfer
+</a>
+
+    </div>
+
 </section>
-
-<!-- SERVICES -->
-<section id="pricing" style="padding:80px 20px; background:#121212;">
-  <h2 style="text-align:center; font-size:32px; margin-bottom:40px;">Services</h2>
-
-  <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap; max-width:1100px; margin:auto;">
-    
-    <div class="service-card" style="background:#1b1b1b; padding:25px; width:300px; border-radius:8px;">
-      <h3>FFL Transfer</h3>
-      <h2 style="color:#caa24a;">$40</h2>
-    </div>
-
-    <div class="service-card" style="background:#1b1b1b; padding:25px; width:300px; border-radius:8px;">
-      <h3>Multiple Item Transfer</h3>
-      <h2 style="color:#caa24a;">$60</h2>
-    </div>
-
-    <div class="service-card" style="background:#1b1b1b; padding:25px; width:300px; border-radius:8px;">
-      <h3>NFA Items</h3>
-      <h2 style="color:#caa24a;">$60</h2>
-    </div>
-
-  </div>
-</section>
-
 <!-- ABOUT -->
-<section id="about" style="padding:80px 20px; background:#0f0f10; text-align:center;">
-  <h2>About Cornerstone Tactical</h2>
-  <p style="max-width:800px; margin:20px auto; opacity:0.9; line-height:1.6;">
-    Veteran-owned Federal Firearms License (FFL) Type 07 business based in Buckeye, Arizona, providing professional and compliant firearm services. Built on a foundation of discipline, integrity, and attention to detail, the business is committed to safe, secure, and lawful handling of all firearms-related transactions.
 
-All services are conducted in strict compliance with federal, state, and local regulations, with a focus on professionalism, security, and customer trust. Operations are appointment-only to ensure privacy, safety, and dedicated service for each client.
-  </p>
+<section class="about" id="about">
+
+    <div class="section-title">
+        <h2>About Cornerstone Tactical</h2>
+        <p>Professional • Veteran Owned • Appointment Only</p>
+    </div>
+
+    <div class="about-text">
+
+        <p>
+            Cornerstone Tactical LLC is a veteran-owned Federal Firearms License
+            (FFL) business proudly serving Buckeye, Arizona, and the surrounding
+            communities. We provide secure, compliant firearm transfer services
+            with an emphasis on professionalism, integrity, and outstanding
+            customer service.
+        </p>
+
+        <p>
+            Every transfer is handled in accordance with all federal, state,
+            and local laws. Whether you're purchasing from an online retailer,
+            arranging a private-party transfer, or need assistance with firearms
+            services, our goal is to make the process simple, secure, and
+            stress-free.
+        </p>
+
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>Veteran Owned</h3>
+
+            <p>
+                Built on integrity, accountability,
+                professionalism, and service to our community.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>FFL 07 Manufacturer</h3>
+
+            <p>
+                An FFL Type 07 allows us to manufacture firearms, perform
+                gunsmithing services, customize firearms, assemble complete
+                firearms, and conduct retail firearm transfers while remaining
+                fully compliant with federal regulations.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Appointment Only</h3>
+
+            <p>
+                Operating by appointment allows every customer to receive
+                dedicated, one-on-one service in a safe and professional
+                environment.
+            </p>
+
+        </div>
+
+    </div>
+
 </section>
+<!-- PRICING -->
 
+<section class="pricing" id="pricing">
+
+    <div class="section-title">
+
+        <h2>Transfer Pricing</h2>
+
+        <p>
+            Transparent pricing with no hidden fees.
+        </p>
+
+    </div>
+
+    <div class="pricing-grid">
+
+        <div class="price-card">
+
+            <div class="price-icon">📦</div>
+
+            <h3>Standard Transfer</h3>
+
+            <div class="price">$40</div>
+
+            <ul>
+
+                <li>✓ Online Purchases</li>
+                <li>✓ Dealer Transfers</li>
+                <li>✓ Background Check Processing</li>
+
+            </ul>
+
+            <a href="#contact" class="price-button">
+                Start Transfer
+            </a>
+
+        </div>
+
+        <div class="price-card featured">
+
+            <div class="price-icon">🤝</div>
+
+            <h3>Multiple Item Transfers</h3>
+
+            <div class="price">$10</div>
+
+            <ul>
+
+                <li>✓ Includes Standard Transfer</li>
+                <li>✓ Plus $10 extra for any additional item</li>
+               
+
+            </ul>
+
+            <a href="#contact" class="price-button">
+                Schedule Appointment
+            </a>
+
+        </div>
+
+        <div class="price-card">
+
+            <div class="price-icon">🔒</div>
+
+            <h3>NFA Transfers</h3>
+
+            <div class="price">$60</div>
+
+            <ul>
+
+                <li>✓ Suppressors</li>
+                <li>✓ Short Barrel Rifles</li>
+                <li>✓ Short Barrel Shotguns</li>
+               
+
+            </ul>
+
+            <a href="#contact" class="price-button">
+                Contact Us
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+<div class="discount-note">
+
+    ***Law enforcement and military discounts available with ID***
+
+</div>
 <!-- TRANSFER PROCESS -->
-<section id="transfer-process" style="padding:60px 20px; background:#0f0f10;">
-  <h2 style="text-align:center; color:#caa24a;">FFL Transfer Process</h2>
 
-  <div style="max-width:900px; margin:40px auto; display:grid; gap:20px;">
+<section class="process" id="process">
 
-    <div style="background:#1a1a1a; padding:20px; border-radius:10px;">
-      <h3 style="color:#caa24a;">Step 1 — Purchase Your Firearm</h3>
-      <p>Buy from any licensed seller and ship to our FFL.</p>
+    <div class="section-title">
+
+        <h2>Firearm Transfer Process</h2>
+
+        <p>Simple, secure, and compliant every step of the way.</p>
+
     </div>
 
-    <div style="background:#1a1a1a; padding:20px; border-radius:10px;">
-      <h3 style="color:#caa24a;">Step 2 — Shipment</h3>
-      <p>Firearm is shipped directly to our licensed location.</p>
+    <div class="timeline">
+
+        <div class="step">
+            <span>1</span>
+            <div>
+                <h3>Purchase Your Firearm</h3>
+                <p>Buy from your preferred online retailer or another licensed dealer.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span>2</span>
+            <div>
+                <h3>Select Cornerstone Tactical</h3>
+                <p>Have the seller ship your firearm to Cornerstone Tactical LLC.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span>3</span>
+            <div>
+                <h3>Schedule an Appointment</h3>
+                <p>Once your firearm arrives, we'll contact you to arrange pickup.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span>4</span>
+            <div>
+                <h3>Background Check</h3>
+                <p>Complete ATF Form 4473 and all required federal and Arizona requirements.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span>5</span>
+            <div>
+                <h3>Take Your Firearm Home</h3>
+                <p>After approval, you'll leave with your firearm knowing everything was completed legally and securely.</p>
+            </div>
+        </div>
+
     </div>
 
-    <div style="background:#1a1a1a; padding:20px; border-radius:10px;">
-      <h3 style="color:#caa24a;">Step 3 — Background Check</h3>
-      <p>Complete ATF Form 4473 and background check.</p>
-    </div>
-
-    <div style="background:#1a1a1a; padding:20px; border-radius:10px;">
-      <h3 style="color:#caa24a;">Step 4 — Pickup</h3>
-      <p>Once approved, you take your firearm home.</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" style="padding:80px 20px; background:#121212;">
-  <h2 style="text-align:center;">Contact</h2>
-
-  <div style="max-width:600px; margin:30px auto;">
-
-    <form action="https://formspree.io/f/xkolvlzb" method="POST"
-      style="display:flex; flex-direction:column; gap:15px;">
-
-      <input type="hidden" name="_subject" value="New Inquiry">
-
-      <input type="text" name="name" placeholder="Full Name" required
-        style="padding:12px; border:none; border-radius:4px;">
-
-      <input type="email" name="email" placeholder="Email" required
-        style="padding:12px; border:none; border-radius:4px;">
-
-      <input type="tel" name="phone" placeholder="Phone"
-        style="padding:12px; border:none; border-radius:4px;">
-
-      <textarea name="message" placeholder="Message" rows="5" required
-        style="padding:12px; border:none; border-radius:4px;"></textarea>
-
-      <button type="submit"
-        style="padding:12px; background:#caa24a; border:none; font-weight:bold;">
-        Send Message
-      </button>
-
-    </form>
-
-    <p style="text-align:center; margin-top:20px; font-size:14px; opacity:0.8;">
-      Phone: 602.502.1100<br>
-      Email: cornerstonetacticalaz@gmail.com
-    </p>
-
-  </div>
 </section>
 
 <!-- FAQ -->
-<section id="faq" style="padding:60px 20px; background:#0f0f10;">
-  <h2 style="text-align:center; color:#caa24a;">FAQ</h2>
 
-  <div style="max-width:800px; margin:30px auto;">
+<section class="faq" id="faq">
 
-    <details>
-      <summary>What is an FFL transfer?</summary>
-      <p>An FFL transfer is the legal process of receiving a firearm through a licensed dealer.</p>
-    </details>
+    <div class="section-title">
 
-    <details>
-      <summary>How long does it take?</summary>
-      <p>Most transfers are same-day after background check approval.</p>
-    </details>
+        <h2>Frequently Asked Questions</h2>
 
-    <details>
-      <summary>What do I need?</summary>
-      <p>A valid government ID and required paperwork.</p>
-    </details>
+    </div>
 
-  </div>
+    <div class="faq-item">
+
+        <button class="faq-question">
+            Do I need an appointment?
+        </button>
+
+        <div class="faq-answer">
+            Yes. All transfers are completed by appointment to provide dedicated service and minimize wait times.
+        </div>
+
+    </div>
+
+    <div class="faq-item">
+
+        <button class="faq-question">
+            What do I need to bring?
+        </button>
+
+        <div class="faq-answer">
+            Bring a valid government-issued photo ID and any additional documentation required under Arizona or federal law.
+        </div>
+
+    </div>
+
+    <div class="faq-item">
+
+        <button class="faq-question">
+            Can you receive firearms from online retailers?
+        </button>
+
+        <div class="faq-answer">
+            Absolutely. Most online firearm retailers can ship directly to our FFL once they have a copy of our license.
+        </div>
+
+    </div>
+
 </section>
 
-<!-- FOOTER -->
-<footer style="text-align:center; padding:20px; background:black; font-size:12px; opacity:0.7;">
-  © 2026 Cornerstone Tactical. All Rights Reserved.
-</footer>
+<!-- CONTACT FORM -->
+
+<section class="contact" id="contact">
+
+    <div class="section-title">
+        <h2>Contact Form</h2>
+        <p>Complete the form below and we’ll contact you to schedule your transfer once it arrives.</p>
+    </div>
+
+    <div class="form-container">
+
+        <form action="https://formspree.io/f/xkolvlzb" method="POST">
+
+    <div class="form-grid">
+
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="tel" name="phone" placeholder="Phone Number">
+        <input type="text" name="firearm_type" placeholder="Firearm Type (optional)">
+
+        <textarea class="full-width" name="message" placeholder="How can we help you?" rows="6"></textarea>
+
+    </div>
+
+    <button type="submit" class="form-button">
+        Send Request
+    </button>
+
+</form>
+
+<script src="script.js"></script>
 
 </body>
+
 </html>
