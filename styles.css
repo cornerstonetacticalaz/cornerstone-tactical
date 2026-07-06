@@ -793,3 +793,6 @@ nav a:hover{
 .faq-answer.open {
     display: block;
 }
+html {
+    scroll-padding-top: 80px; /* adjust to your header height */
+}
