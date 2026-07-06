@@ -178,16 +178,15 @@ nav a:hover{
 
 }
 
-@media(max-width:768px){
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+    }
 
-header{
-
-    flex-direction:column;
-
-    gap:20px;
-
+    header.shrink {
+        padding: 8px 20px;
+    }
 }
-
 nav{
 
     gap:18px;
@@ -795,4 +794,26 @@ nav a:hover{
 }
 html {
     scroll-padding-top: 80px; /* adjust to your header height */
+}
+header {
+    transition: all 0.25s ease;
+    padding: 25px 40px;
+}
+
+header.shrink {
+    padding: 10px 40px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+header {
+    transition: all 0.25s ease;
+    padding: 25px 40px;
+    background: white; /* ensures readability */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header.shrink {
+    padding: 12px 40px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.12);
 }
