@@ -50,6 +50,10 @@ header{
     color:#d6b46a;
 
 }
+.logo {
+    text-decoration: none;
+    display: inline-block;
+}
 
 nav{
 
