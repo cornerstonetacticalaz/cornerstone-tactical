@@ -17,3 +17,4 @@ document.querySelectorAll(".faq-question").forEach(button => {
         answer.classList.toggle("open");
     });
 });
+
