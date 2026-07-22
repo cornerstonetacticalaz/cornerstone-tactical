@@ -902,6 +902,15 @@ footer {
     padding-top: 200px;
     padding-bottom: 80px;
 }
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.12);
+    padding-top:20px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:25px;
+}
 .footer-verse {
     max-width: 700px;
     margin: 1.5rem auto;
