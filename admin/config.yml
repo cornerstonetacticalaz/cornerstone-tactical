@@ -1,0 +1,45 @@
+backend:
+  name: github
+  repo: cornerstonetacticalaz/cornerstone-tactical
+  branch: main
+
+media_folder: "images/gallery"
+public_folder: "/images/gallery"
+
+collections:
+  - label: "Work Gallery"
+    name: "work_gallery"
+    files:
+      - label: "Gallery Photos"
+        name: "gallery"
+        file: "data/gallery.json"
+        fields:
+          - label: "Photos"
+            name: "items"
+            widget: "list"
+            label_singular: "Photo"
+            summary: "{{fields.caption}}"
+            add_to_top: true
+            allow_add: true
+            allow_remove: true
+            allow_reorder: true
+            fields:
+              - label: "Photo"
+                name: "image"
+                widget: "image"
+                choose_url: false
+                allow_multiple: false
+                media_library:
+                  config:
+                    max_file_size: 12582912
+              - label: "Caption"
+                name: "caption"
+                widget: "string"
+                default: "Custom Laser Engraving"
+                required: false
+                hint: "Short description used inside the admin list."
+              - label: "Image Description"
+                name: "alt"
+                widget: "string"
+                required: false
+                hint: "Brief description of what is shown for accessibility."

@@ -1,0 +1,22 @@
+CORNERSTONE TACTICAL GALLERY ADMIN - FINAL CONNECTION STEP
+
+The website is now prepared for an admin-managed gallery.
+
+What /admin/ will let you do after GitHub authentication is connected:
+- Upload a new gallery photo
+- Delete a gallery photo
+- Drag/reorder photos
+- Edit the short description
+- Publish changes back to the website repository
+
+The public gallery now reads data/gallery.json, so no homepage HTML editing is needed for future photo changes.
+
+ONE VALUE STILL NEEDED:
+admin/config.yml currently contains:
+  repo: REPLACE_WITH_GITHUB_OWNER/REPLACE_WITH_REPOSITORY
+
+Replace this with the GitHub repository that publishes cornerstonetacticalaz.com, for example:
+  repo: username/repository-name
+
+AUTHENTICATION:
+The GitHub backend requires an OAuth/authentication service before /admin/ can write to GitHub. Do not put a plain password into the website files. Once the repository name is known, finish the OAuth connection and then /admin/ becomes the day-to-day gallery manager.
