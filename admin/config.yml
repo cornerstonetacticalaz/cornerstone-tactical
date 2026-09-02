@@ -24,6 +24,12 @@ collections:
             allow_remove: true
             allow_reorder: true
             fields:
+              - label: "Show on Website"
+                name: "visible"
+                widget: "boolean"
+                default: true
+                required: false
+                hint: "Turn this off to keep the photo saved without displaying it on the public website."
               - label: "Photo"
                 name: "image"
                 widget: "image"
@@ -38,8 +44,8 @@ collections:
                 default: "Custom Laser Engraving"
                 required: false
                 hint: "Short description used inside the admin list."
-              - label: "Image Description"
+              - label: "Alt Text (optional)"
                 name: "alt"
                 widget: "string"
                 required: false
-                hint: "Brief description of what is shown for accessibility."
+                hint: "Describe what is shown in the photo for accessibility and search engines."

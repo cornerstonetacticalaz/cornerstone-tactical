@@ -1,0 +1,29 @@
+/* Cornerstone Tactical Gallery Admin layout
+   Admin-only. Does not affect the public website. */
+
+html, body, #nc-root {
+  width: 100%;
+  min-width: 100%;
+}
+
+/* Prefer full-width editor controls instead of a split editor/preview layout. */
+#nc-root [class*="EditorControlPane"],
+#nc-root [class*="editor-control-pane"],
+#nc-root [class*="EditorContainer"],
+#nc-root [class*="editor-container"] {
+  width: 100% !important;
+  max-width: 100% !important;
+  flex: 1 1 100% !important;
+}
+
+/* Hide Decap preview-pane variants. */
+#nc-root [class*="PreviewPane"],
+#nc-root [class*="preview-pane"] {
+  display: none !important;
+}
+
+/* Keep image controls/thumbnail readable in the editor. */
+#nc-root img {
+  max-width: 320px;
+  height: auto;
+}
