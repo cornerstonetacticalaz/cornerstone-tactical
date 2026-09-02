@@ -44,7 +44,7 @@
     title.textContent = (caption || "Gallery Photo").trim();
 
     const status = document.createElement("span");
-    const isVisible = String(visibleText).trim().toLowerCase() !== "false";
+    const isVisible = String(visibleText).trim().toLowerCase() === "true";
     status.className = "ct-gallery-status" + (isVisible ? "" : " is-hidden");
     status.textContent = isVisible ? "Shown on website" : "Hidden from website";
 

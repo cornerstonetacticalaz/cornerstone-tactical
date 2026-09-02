@@ -45,7 +45,42 @@ document.querySelectorAll(".faq-question").forEach(button => {
         `).join("");
 
         grid.querySelectorAll(".gallery-item").forEach(button => {
-            button.addEventListener("click", () => openLightbox(Number(button.dataset.index)));
+            let startX = 0;
+            let startY = 0;
+            let moved = false;
+            let suppressClick = false;
+
+            button.addEventListener("touchstart", event => {
+                const touch = event.touches[0];
+                if (!touch) return;
+                startX = touch.clientX;
+                startY = touch.clientY;
+                moved = false;
+            }, { passive: true });
+
+            button.addEventListener("touchmove", event => {
+                const touch = event.touches[0];
+                if (!touch) return;
+                if (Math.abs(touch.clientX - startX) > 10 || Math.abs(touch.clientY - startY) > 10) {
+                    moved = true;
+                }
+            }, { passive: true });
+
+            button.addEventListener("touchend", () => {
+                if (moved) {
+                    suppressClick = true;
+                    setTimeout(() => { suppressClick = false; }, 400);
+                }
+            }, { passive: true });
+
+            button.addEventListener("click", event => {
+                if (suppressClick) {
+                    event.preventDefault();
+                    suppressClick = false;
+                    return;
+                }
+                openLightbox(Number(button.dataset.index));
+            });
         });
     }
 
