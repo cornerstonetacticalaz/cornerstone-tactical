@@ -43,13 +43,7 @@
     title.className = "ct-gallery-caption";
     title.textContent = (caption || "Gallery Photo").trim();
 
-    const status = document.createElement("span");
-    const isVisible = String(visibleText).trim().toLowerCase() === "true";
-    status.className = "ct-gallery-status" + (isVisible ? "" : " is-hidden");
-    status.textContent = isVisible ? "Shown on website" : "Hidden from website";
-
     text.appendChild(title);
-    text.appendChild(status);
     wrap.appendChild(thumb);
     wrap.appendChild(text);
     return wrap;
@@ -87,19 +81,8 @@
       const imagePath = parts[1];
       const visibleText = parts.slice(2).join(DELIM);
 
-      const host = textNode.parentElement;
-      if (!host) return;
-
-      host.classList.add("ct-gallery-summary-host");
-
-      let summary = host.querySelector(":scope > .ct-gallery-summary");
-      const replacement = buildSummary(caption, imagePath, visibleText);
-
-      if (summary) {
-        summary.replaceWith(replacement);
-      } else {
-        host.appendChild(replacement);
-      }
+      const summary = buildSummary(caption, imagePath, visibleText);
+      textNode.parentNode.replaceChild(summary, textNode);
     });
   }
 

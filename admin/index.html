@@ -5,48 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex,nofollow">
   <title>Cornerstone Tactical | Gallery Admin</title>
-  <link rel="stylesheet" href="/admin/admin.css">
+  <link rel="stylesheet" href="/admin/gallery-admin.css">
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@3.15.1/dist/decap-cms.js"></script>
-  <script>
-    CMS.registerPreviewStyle("/admin/preview.css");
-  </script>
-
-  <script>
-    (function () {
-      function applyAdminLayout() {
-        const root = document.querySelector('#nc-root');
-        if (!root) return;
-
-        // Hide Decap's split preview pane and preview controls.
-        root.querySelectorAll('[class*="PreviewPane"], [class*="preview-pane"], [class*="PreviewToggle"], [class*="preview-toggle"]').forEach(el => {
-          el.style.display = 'none';
-        });
-
-        // Widen likely editor containers.
-        root.querySelectorAll('[class*="EditorContainer"], [class*="editor-container"], [class*="EditorControlPane"], [class*="editor-control-pane"]').forEach(el => {
-          el.style.width = '100%';
-          el.style.maxWidth = '100%';
-          el.style.flex = '1 1 100%';
-        });
-
-        // Hide buttons whose visible text is preview-only.
-        root.querySelectorAll('button, a').forEach(el => {
-          const txt = (el.textContent || '').trim().toLowerCase();
-          if (txt === 'check for preview' || txt === 'preview') {
-            el.style.display = 'none';
-          }
-        });
-      }
-
-      window.addEventListener('load', () => {
-        applyAdminLayout();
-        const observer = new MutationObserver(applyAdminLayout);
-        observer.observe(document.body, { childList: true, subtree: true });
-      });
-    })();
-  </script>
-
+  <script src="/admin/gallery-admin.js"></script>
 </body>
 </html>
