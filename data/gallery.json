@@ -1,11 +1,6 @@
 {
   "items": [
     {
-      "visible": true,
-      "caption": "Custom Laser Engraving",
-      "image": "/images/gallery/img_1741.heic"
-    },
-    {
       "image": "/images/gallery/pmag-sugar-skull.jpg",
       "caption": "Custom Magazine Engraving",
       "alt": "Custom engraved PMAG with skull and floral artwork",
@@ -39,19 +34,19 @@
       "image": "/images/gallery/handcuffs-police-badge.jpg",
       "caption": "Custom Metal Engraving",
       "alt": "Custom engraved handcuffs with police badge and personalized marking",
-      "visible": false
+      "visible": true
     },
     {
       "image": "/images/gallery/metal-magazine-number.jpg",
       "caption": "Custom Metal Engraving",
       "alt": "Custom numbered metal magazine engraving",
-      "visible": false
+      "visible": true
     },
     {
       "image": "/images/gallery/handcuffs-federal-badge.jpg",
       "caption": "Custom Metal Engraving",
       "alt": "Custom engraved handcuffs with federal badge artwork",
-      "visible": false
+      "visible": true
     }
   ]
 }
