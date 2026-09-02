@@ -47,6 +47,7 @@ document.querySelectorAll(".faq-question").forEach(button => {
         grid.querySelectorAll(".gallery-item").forEach(button => {
             let startX = 0;
             let startY = 0;
+            let startScrollY = 0;
             let moved = false;
             let suppressClick = false;
 
@@ -55,26 +56,31 @@ document.querySelectorAll(".faq-question").forEach(button => {
                 if (!touch) return;
                 startX = touch.clientX;
                 startY = touch.clientY;
+                startScrollY = window.scrollY;
                 moved = false;
             }, { passive: true });
 
             button.addEventListener("touchmove", event => {
                 const touch = event.touches[0];
                 if (!touch) return;
-                if (Math.abs(touch.clientX - startX) > 10 || Math.abs(touch.clientY - startY) > 10) {
+                if (
+                    Math.abs(touch.clientX - startX) > 6 ||
+                    Math.abs(touch.clientY - startY) > 6 ||
+                    Math.abs(window.scrollY - startScrollY) > 4
+                ) {
                     moved = true;
                 }
             }, { passive: true });
 
             button.addEventListener("touchend", () => {
-                if (moved) {
+                if (moved || Math.abs(window.scrollY - startScrollY) > 4) {
                     suppressClick = true;
-                    setTimeout(() => { suppressClick = false; }, 400);
+                    setTimeout(() => { suppressClick = false; }, 700);
                 }
             }, { passive: true });
 
             button.addEventListener("click", event => {
-                if (suppressClick) {
+                if (suppressClick || Math.abs(window.scrollY - startScrollY) > 4) {
                     event.preventDefault();
                     suppressClick = false;
                     return;
