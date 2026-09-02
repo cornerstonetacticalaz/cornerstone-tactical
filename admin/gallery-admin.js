@@ -44,15 +44,40 @@
     title.textContent = (caption || "Gallery Photo").trim();
 
     const status = document.createElement("span");
-    const isVisible = String(visibleText).trim().toLowerCase() === "true";
-    status.className = "ct-gallery-status" + (isVisible ? "" : " is-hidden");
-    status.textContent = isVisible ? "Shown on website" : "Hidden from website";
+    status.className = "ct-gallery-status";
+    status.textContent = "Checking visibility…";
+    status.dataset.imagePath = imagePath || "";
 
     text.appendChild(title);
     text.appendChild(status);
     wrap.appendChild(thumb);
     wrap.appendChild(text);
     return wrap;
+  }
+
+  async function refreshPublishedStatuses() {
+    try {
+      const response = await fetch("/data/gallery.json?_=" + Date.now(), { cache: "no-store" });
+      if (!response.ok) return;
+
+      const data = await response.json();
+      const visibility = new Map(
+        (Array.isArray(data.items) ? data.items : [])
+          .filter(item => item && item.image)
+          .map(item => [String(item.image), item.visible !== false])
+      );
+
+      document.querySelectorAll(".ct-gallery-status[data-image-path]").forEach(status => {
+        const path = status.dataset.imagePath;
+        if (!visibility.has(path)) return;
+
+        const isVisible = visibility.get(path);
+        status.className = "ct-gallery-status" + (isVisible ? "" : " is-hidden");
+        status.textContent = isVisible ? "Shown on website" : "Hidden from website";
+      });
+    } catch (error) {
+      console.warn("Unable to refresh gallery visibility status:", error);
+    }
   }
 
   function enhanceSummaries() {
@@ -104,11 +129,20 @@
 
   window.addEventListener("load", function () {
     scheduleEnhance();
-    const observer = new MutationObserver(scheduleEnhance);
+    setTimeout(refreshPublishedStatuses, 500);
+
+    const observer = new MutationObserver(function () {
+      scheduleEnhance();
+      setTimeout(refreshPublishedStatuses, 250);
+    });
+
     observer.observe(document.body, {
       subtree: true,
       childList: true,
       characterData: true
     });
+
+    window.addEventListener("focus", refreshPublishedStatuses);
+    setInterval(refreshPublishedStatuses, 5000);
   });
 })();
