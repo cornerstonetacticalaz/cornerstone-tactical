@@ -6,6 +6,9 @@ backend:
 media_folder: "images/gallery"
 public_folder: "/images/gallery"
 
+editor:
+  preview: false
+
 collections:
   - label: "Work Gallery"
     name: "work_gallery"
@@ -18,7 +21,8 @@ collections:
             name: "items"
             widget: "list"
             label_singular: "Photo"
-            summary: "{{fields.caption}}"
+            collapsed: true
+            summary: "{{fields.caption}}|||{{fields.image}}|||{{fields.visible}}"
             add_to_top: true
             allow_add: true
             allow_remove: true
