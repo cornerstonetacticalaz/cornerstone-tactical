@@ -34,19 +34,19 @@
       "image": "/images/gallery/handcuffs-police-badge.jpg",
       "caption": "Custom Metal Engraving",
       "alt": "Custom engraved handcuffs with police badge and personalized marking",
-      "visible": true
+      "visible": false
     },
     {
       "image": "/images/gallery/metal-magazine-number.jpg",
       "caption": "Custom Metal Engraving",
       "alt": "Custom numbered metal magazine engraving",
-      "visible": true
+      "visible": false
     },
     {
       "image": "/images/gallery/handcuffs-federal-badge.jpg",
       "caption": "Custom Metal Engraving",
       "alt": "Custom engraved handcuffs with federal badge artwork",
-      "visible": true
+      "visible": false
     }
   ]
 }
