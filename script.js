@@ -79,7 +79,7 @@ document.querySelectorAll(".faq-question").forEach(button => {
             return response.json();
         })
         .then(data => {
-            items = Array.isArray(data.items) ? data.items.filter(item => item && item.image) : [];
+            items = Array.isArray(data.items) ? data.items.filter(item => item && item.image && item.visible !== false) : [];
             renderGallery();
         })
         .catch(error => {
