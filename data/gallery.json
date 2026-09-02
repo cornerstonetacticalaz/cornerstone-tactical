@@ -1,6 +1,11 @@
 {
   "items": [
     {
+      "visible": true,
+      "caption": "Custom Laser Engraving",
+      "image": "/images/gallery/img_1741.heic"
+    },
+    {
       "image": "/images/gallery/pmag-sugar-skull.jpg",
       "caption": "Custom Magazine Engraving",
       "alt": "Custom engraved PMAG with skull and floral artwork",
