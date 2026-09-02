@@ -65,3 +65,21 @@
   color: #68707a;
   text-align: center;
 }
+
+
+/* Keep Decap's original summary text node in the DOM so its live boolean value
+   continues to update. The custom thumbnail/status UI is drawn over it. */
+.ct-gallery-summary-host {
+  position: relative !important;
+  min-height: 62px;
+  overflow: hidden;
+}
+
+.ct-gallery-summary-host > .ct-gallery-summary {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: #fff;
+  padding-right: 4px;
+  box-sizing: border-box;
+}
