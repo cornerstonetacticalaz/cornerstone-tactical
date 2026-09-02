@@ -57,7 +57,7 @@
 
   async function refreshPublishedStatuses() {
     try {
-      const response = await fetch("/data/gallery.json?_=" + Date.now(), { cache: "no-store" });
+      const response = await fetch("https://cornerstonetacticalaz.com/data/gallery.json?_=" + Date.now(), { cache: "no-store" });
       if (!response.ok) return;
 
       const data = await response.json();
@@ -138,8 +138,7 @@
 
     observer.observe(document.body, {
       subtree: true,
-      childList: true,
-      characterData: true
+      childList: true
     });
 
     window.addEventListener("focus", refreshPublishedStatuses);
