@@ -1,0 +1,1 @@
+Version 10: Only requested gallery-card wording cleanup from v9. Removed VIEW DESIGN overlay, CUSTOM ENGRAVING kicker, and MAGAZINE TYPE heading from each design card. Image click-to-enlarge, magazine dropdown, dynamic price, and Request This Design remain. No other functionality intentionally changed.

@@ -18,85 +18,118 @@ document.querySelectorAll(".faq-question").forEach(button => {
     });
 });
 
-// Work gallery: data-driven rendering + lightbox
+// Standalone Shop Designs gallery. Embedded catalog works in local previews and on GitHub Pages.
 (() => {
-    const grid = document.getElementById("gallery-grid");
-    const lightbox = document.getElementById("gallery-lightbox");
-    if (!grid || !lightbox) return;
-
-    const image = lightbox.querySelector(".gallery-lightbox-image");
-    const closeButton = lightbox.querySelector(".gallery-lightbox-close");
-    const prevButton = lightbox.querySelector(".gallery-lightbox-prev");
-    const nextButton = lightbox.querySelector(".gallery-lightbox-next");
-    let items = [];
-    let currentIndex = 0;
-
-    function escapeHtml(value = "") {
-        return String(value).replace(/[&<>'"]/g, char => ({
-            "&":"&amp;", "<":"&lt;", ">":"&gt;", "'":"&#39;", '"':"&quot;"
-        })[char]);
+  const grid = document.getElementById('shop-grid');
+  if (!grid) return;
+  const modal = document.getElementById('shop-modal');
+  const count = document.getElementById('shop-count');
+  const products = [{"id":"design-01","name":"13th","image":"images/shop/01-13th.jpg","alt":"13th engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-02","name":"BeetleWho","image":"images/shop/02-beetlewho.jpg","alt":"BeetleWho engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-03","name":"Bella Muerte","image":"images/shop/03-bella-muerte.jpg","alt":"Bella Muerte engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-04","name":"Camo1","image":"images/shop/04-camo1.jpg","alt":"Camo1 engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-05","name":"Chains and Roses","image":"images/shop/05-chains-and-roses.jpg","alt":"Chains and Roses engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-06","name":"Chocolate Chip AK","image":"images/shop/06-chocolate-chip-ak.jpg","alt":"Chocolate Chip AK engraved magazine by Cornerstone Tactical","supportedMagazines":["ak"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-07","name":"Chucky1","image":"images/shop/07-chucky1.jpg","alt":"Chucky1 engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-08","name":"Forgive me father","image":"images/shop/08-forgive-me-father.jpg","alt":"Forgive me father engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-09","name":"Frankenstein","image":"images/shop/09-frankenstein.jpg","alt":"Frankenstein engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-10","name":"Frankensteins Wife","image":"images/shop/10-frankensteins-wife.jpg","alt":"Frankensteins Wife engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-11","name":"Freddy Half Face","image":"images/shop/11-freddy-half-face.jpg","alt":"Freddy Half Face engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-12","name":"Freddy.1","image":"images/shop/12-freddy-1.jpg","alt":"Freddy.1 engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-13","name":"Ghost","image":"images/shop/13-ghost.jpg","alt":"Ghost engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-14","name":"Ghostface1","image":"images/shop/14-ghostface1.jpg","alt":"Ghostface1 engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-15","name":"Give 'em hell","image":"images/shop/15-give-em-hell.jpg","alt":"Give 'em hell engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-16","name":"Grave Front","image":"images/shop/16-grave-front.jpg","alt":"Grave Front engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-17","name":"Hazmat","image":"images/shop/17-hazmat.jpg","alt":"Hazmat engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-18","name":"HexCamo","image":"images/shop/18-hexcamo.jpg","alt":"HexCamo engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-19","name":"It Half","image":"images/shop/19-it-half.jpg","alt":"It Half engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-20","name":"Jason Half Face","image":"images/shop/20-jason-half-face.jpg","alt":"Jason Half Face engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-21","name":"John Wick","image":"images/shop/21-john-wick.jpg","alt":"John Wick engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-22","name":"Joker HL","image":"images/shop/22-joker-hl.jpg","alt":"Joker HL engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-23","name":"Laugh out loud","image":"images/shop/23-laugh-out-loud.jpg","alt":"Laugh out loud engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-24","name":"Leatherface","image":"images/shop/24-leatherface.jpg","alt":"Leatherface engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-25","name":"Liberty Belle","image":"images/shop/25-liberty-belle.jpg","alt":"Liberty Belle engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-26","name":"Medusa","image":"images/shop/26-medusa.jpg","alt":"Medusa engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-27","name":"Medusa2","image":"images/shop/27-medusa2.jpg","alt":"Medusa2 engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-28","name":"Medusa3","image":"images/shop/28-medusa3.jpg","alt":"Medusa3 engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-29","name":"Michael Half Face","image":"images/shop/29-michael-half-face.jpg","alt":"Michael Half Face engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-30","name":"MM Creature","image":"images/shop/30-mm-creature.jpg","alt":"MM Creature engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-31","name":"Money Mag","image":"images/shop/31-money-mag.jpg","alt":"Money Mag engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-32","name":"Salty Bitch","image":"images/shop/32-salty-bitch.jpg","alt":"Salty Bitch engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-33","name":"Samurai Pagoda","image":"images/shop/33-samurai-pagoda.jpg","alt":"Samurai Pagoda engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-34","name":"Santa Muerte","image":"images/shop/34-santa-muerte.jpg","alt":"Santa Muerte engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-35","name":"Scarface AK — Design 1","image":"images/shop/35-scarface-ak.jpg","alt":"Scarface AK — Design 1 engraved magazine by Cornerstone Tactical","supportedMagazines":["ak"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-36","name":"Scarface AK — Design 2","image":"images/shop/36-scarface-ak2.jpg","alt":"Scarface AK — Design 2 engraved magazine by Cornerstone Tactical","supportedMagazines":["ak"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-37","name":"Scarface1","image":"images/shop/37-scarface1.jpg","alt":"Scarface1 engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-38","name":"Scarface2","image":"images/shop/38-scarface2.jpg","alt":"Scarface2 engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-39","name":"Scream on Phone","image":"images/shop/39-scream-on-phone.jpg","alt":"Scream on Phone engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-40","name":"SIlent October","image":"images/shop/40-silent-october.jpg","alt":"SIlent October engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-41","name":"Spooky Season","image":"images/shop/41-spooky-season.jpg","alt":"Spooky Season engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-42","name":"St Michael","image":"images/shop/42-st-michael.jpg","alt":"St Michael engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-43","name":"Tac Gloss","image":"images/shop/43-tac-gloss.jpg","alt":"Tac Gloss engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-44","name":"Terrifier","image":"images/shop/44-terrifier.jpg","alt":"Terrifier engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-45","name":"The Depths","image":"images/shop/45-the-depths.jpg","alt":"The Depths engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-46","name":"The Last Confession","image":"images/shop/46-the-last-confession.jpg","alt":"The Last Confession engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-47","name":"The Prayer","image":"images/shop/47-the-prayer.jpg","alt":"The Prayer engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-48","name":"The Screamer","image":"images/shop/48-the-screamer.jpg","alt":"The Screamer engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-49","name":"The Widow","image":"images/shop/49-the-widow.jpg","alt":"The Widow engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-50","name":"The World is Yours","image":"images/shop/50-the-world-is-yours.jpg","alt":"The World is Yours engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-51","name":"Tiki","image":"images/shop/51-tiki.jpg","alt":"Tiki engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-52","name":"Til Death","image":"images/shop/52-til-death.jpg","alt":"Til Death engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-53","name":"Unholy","image":"images/shop/53-unholy.jpg","alt":"Unholy engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-54","name":"War Torn","image":"images/shop/54-war-torn.jpg","alt":"War Torn engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."},{"id":"design-55","name":"Waving Flag","image":"images/shop/55-waving-flag.jpg","alt":"Waving Flag engraved magazine by Cornerstone Tactical","supportedMagazines":["556","300"],"description":"Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."}];
+  // Only the three confirmed AK designs offer AK. Other designs currently offer PMAG choices.
+  const options = [{id:'556',label:'5.56 PMAG',price:30},{id:'300',label:'.300 BLK PMAG',price:40},{id:'ak',label:'AK magazine',price:40}];
+  let lastFocus = null;
+  // The engraving appearance disclaimer remains visibly displayed on the page.
+  // Customers can request a design without an additional acknowledgment step.
+  function confirmInquiry(product, type) {
+    if (!product.supportedMagazines.includes(type)) return;
+    inquiry(product, type);
+  }
+  const money = n => '$' + n.toFixed(2);
+  function populateSelect(select, product) {
+    const placeholder = new Option('Select magazine type', '');
+    select.add(placeholder);
+    for (const o of options.filter(o => product.supportedMagazines.includes(o.id))) select.add(new Option(o.label + ' — ' + money(o.price), o.id));
+  }
+  function updatePrice(select, display) {
+    const choice = options.find(o => o.id === select.value);
+    display.textContent = choice ? money(choice.price) + ' + shipping' : 'Select a magazine for pricing';
+  }
+  function inquiry(product, type) {
+    const choice = options.find(o => o.id === type);
+    if (!choice) return;
+    const message = document.querySelector('#contact textarea[name="message"]');
+    const imageUrl = new URL(product.image, document.baseURI).href;
+    if (message) message.value = 'ENGRAVING DESIGN REQUEST\n' +
+      'Design reference: ' + product.id + '\n' +
+      'Design photo: ' + imageUrl + '\n' +
+      'Magazine: ' + choice.label + '\n' +
+      'Price: ' + money(choice.price) + ' plus shipping\n\n' +
+      'Please confirm compatibility, availability, and shipping eligibility.';
+    // Formspree receives a direct photo URL and reference ID with the inquiry.
+    const contactForm = document.querySelector('#contact form');
+    if (contactForm) {
+      const setField = (field, value) => {
+        let input = contactForm.querySelector('input[name="' + field + '"]');
+        if (!input) { input = document.createElement('input'); input.type = 'hidden'; input.name = field; contactForm.append(input); }
+        input.value = value;
+      };
+      setField('design_reference', product.id);
+      setField('design_photo_url', imageUrl);
+      setField('requested_magazine', choice.label);
+      setField('quoted_price', money(choice.price) + ' plus shipping');
     }
+    document.getElementById('contact')?.scrollIntoView({behavior:'smooth'});
+    message?.focus({preventScroll:true});
+  }
+  function openPreview(product) {
+    lastFocus = document.activeElement;
+    modal.querySelector('.shop-modal-image').src = product.image;
+    modal.querySelector('.shop-modal-image').alt = 'Selected engraved magazine design';
+    modal.querySelector('.shop-modal-title').textContent = 'Engraving preview';
+    modal.querySelector('.shop-modal-description').textContent = product.description || 'Magazine compatibility and shipping eligibility will be confirmed before payment.';
+    modal.querySelector('.shop-modal-order').textContent = 'Return to design selection ↗';
+    modal.querySelector('.shop-modal-order').href = '#gallery';
+    modal.classList.add('open'); modal.setAttribute('aria-hidden','false');
+    document.body.classList.add('shop-modal-open'); modal.querySelector('.shop-modal-close').focus();
+  }
+  function closePreview() {
+    modal.classList.remove('open'); modal.setAttribute('aria-hidden','true');
+    document.body.classList.remove('shop-modal-open');
+    modal.querySelector('.shop-modal-image').removeAttribute('src'); lastFocus?.focus();
+  }
+  count.textContent = products.length + (products.length === 1 ? ' DESIGN' : ' DESIGNS');
+  grid.replaceChildren();
+  for (const product of products) {
+    const card = document.createElement('article'); card.className = 'shop-card';
+    const photo = document.createElement('button'); photo.type = 'button'; photo.className = 'shop-photo';
+    photo.setAttribute('aria-label','Enlarge engraving design');
+    const img = document.createElement('img'); img.src = product.image; img.alt = 'Engraved magazine design photo'; img.loading = 'lazy';
+    img.addEventListener('error', () => { img.alt = 'Design photo unavailable'; card.classList.add('shop-image-missing'); });
+    photo.append(img); photo.addEventListener('click', () => openPreview(product));
+    const detail = document.createElement('div'); detail.className = 'shop-card-detail';
+    const select = document.createElement('select'); select.className = 'shop-mag-select'; select.setAttribute('aria-label','Magazine type for selected design');
+    populateSelect(select, product);
+    const price = document.createElement('strong'); price.className = 'shop-dynamic-price';
+    updatePrice(select,price); select.addEventListener('change', () => updatePrice(select,price));
+    const order = document.createElement('button'); order.type = 'button'; order.className = 'shop-inquire'; order.textContent = 'REQUEST THIS DESIGN ↗'; order.disabled = true;
+    select.addEventListener('change', () => { order.disabled = !select.value; });
+    order.addEventListener('click', () => confirmInquiry(product,select.value));
+    detail.append(select,price,order); card.append(photo,detail); grid.append(card);
+  }
+  modal.querySelector('.shop-modal-close').addEventListener('click',closePreview);
+  modal.querySelector('.shop-modal-order').addEventListener('click',closePreview);
+  modal.addEventListener('click',e => { if (e.target === modal) closePreview(); });
+  document.addEventListener('keydown',e => { if (modal.classList.contains('open') && e.key === 'Escape') closePreview(); });
+})();
 
-    function renderGallery() {
-        grid.innerHTML = items.map((item, index) => `
-            <button class="gallery-item" type="button" data-index="${index}" aria-label="Open ${escapeHtml(item.caption || 'gallery image')}">
-                <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.alt || item.caption || 'Cornerstone Tactical engraving work')}" loading="lazy">
-            </button>
-        `).join("");
-
-        grid.querySelectorAll(".gallery-item").forEach(button => {
-            button.addEventListener("click", () => openLightbox(Number(button.dataset.index)));
-        });
-    }
-
-    function showImage(index) {
-        if (!items.length) return;
-        currentIndex = (index + items.length) % items.length;
-        image.src = items[currentIndex].image;
-        image.alt = items[currentIndex].alt || items[currentIndex].caption || "Cornerstone Tactical engraving work";
-    }
-
-    function openLightbox(index) {
-        showImage(index);
-        lightbox.classList.add("open");
-        lightbox.setAttribute("aria-hidden", "false");
-        document.body.classList.add("gallery-open");
-        closeButton.focus();
-    }
-
-    function closeLightbox() {
-        lightbox.classList.remove("open");
-        lightbox.setAttribute("aria-hidden", "true");
-        document.body.classList.remove("gallery-open");
-        image.src = "";
-        const current = grid.querySelector(`[data-index="${currentIndex}"]`);
-        if (current) current.focus();
-    }
-
-    fetch("data/gallery.json", { cache: "no-store" })
-        .then(response => {
-            if (!response.ok) throw new Error(`Gallery data returned ${response.status}`);
-            return response.json();
-        })
-        .then(data => {
-            items = Array.isArray(data.items) ? data.items.filter(item => item && item.image && item.visible !== false) : [];
-            renderGallery();
-        })
-        .catch(error => {
-            console.error("Unable to load gallery:", error);
-            grid.innerHTML = '<p class="gallery-load-error">Gallery is temporarily unavailable.</p>';
-        });
-
-    closeButton.addEventListener("click", closeLightbox);
-    prevButton.addEventListener("click", () => showImage(currentIndex - 1));
-    nextButton.addEventListener("click", () => showImage(currentIndex + 1));
-    lightbox.addEventListener("click", event => {
-        if (event.target === lightbox) closeLightbox();
-    });
-    document.addEventListener("keydown", event => {
-        if (!lightbox.classList.contains("open")) return;
-        if (event.key === "Escape") closeLightbox();
-        if (event.key === "ArrowLeft") showImage(currentIndex - 1);
-        if (event.key === "ArrowRight") showImage(currentIndex + 1);
-    });
+// Custom design inquiry: reuse the site's existing Formspree contact form. No payments are collected here.
+(() => {
+  const form = document.getElementById('custom-design-form');
+  const contact = document.querySelector('#contact form');
+  if (!form || !contact) return;
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    const magazine = document.getElementById('custom-magazine').value;
+    const idea = document.getElementById('custom-idea').value.trim();
+    const message = contact.querySelector('textarea[name="message"]');
+    if (!message) return;
+    for (const field of ['design_reference','design_photo_url','requested_magazine','quoted_price']) contact.querySelector('input[name= + field + ]')?.remove();
+    message.value = 'CUSTOM ENGRAVING DESIGN REQUEST\n' +
+      'Preferred magazine: ' + magazine + '\n' +
+      'Design concept: ' + idea + '\n\n' +
+      'I acknowledge the $10 design deposit is due before design work begins and is credited toward my magazine purchase. The deposit is nonrefundable after work begins if I change my mind, reject an achievable design, or stop responding. If Cornerstone Tactical cannot reasonably fulfill my original design requirements, the deposit is refunded in full. No engraving begins before design approval and final payment.';
+    document.getElementById('contact').scrollIntoView({behavior:'smooth',block:'start'});
+    message.focus({preventScroll:true});
+  });
 })();

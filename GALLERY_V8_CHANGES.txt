@@ -1,0 +1,1 @@
+Version 8: Uses user-edited index.html from uploaded pasted text. Repaired incomplete shop-footer markup; retained all other user edits. Removed redundant custom-request link per user HTML. Compact gallery: 4 columns desktop, 3 tablet, 2 mobile; image thumbnails use contain; existing click-to-enlarge modal preserved. Live website not modified.

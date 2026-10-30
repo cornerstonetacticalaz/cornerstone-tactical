@@ -1,0 +1,1 @@
+v5: Added a visible engraving shade/contrast notice in the gallery and a required acknowledgment before a customer can proceed from REQUEST THIS DESIGN to the existing contact form. The acknowledgment is appended to the contact message; this is an inquiry flow, not a paid checkout. No changes to pricing or magazine compatibility.

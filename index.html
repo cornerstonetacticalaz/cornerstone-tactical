@@ -41,7 +41,7 @@
     <nav>
 
         <a href="#about">About</a>
-        <a href="#gallery">Gallery</a>
+        <a href="#gallery">Shop Designs</a>
         <a href="#pricing">Pricing</a>
         <a href="#process">Transfer Process</a>
         <a href="#faq">FAQ</a>
@@ -158,24 +158,40 @@
 
 </section>
 
-<!-- WORK GALLERY -->
-<section class="gallery" id="gallery">
-    <div class="section-title">
-        <h2>Our Work</h2>
-        <p>Custom laser engraving completed by Cornerstone Tactical.</p>
-    </div>
-    <div class="gallery-grid" id="gallery-grid" aria-live="polite">
-        <!-- Gallery items are loaded from data/gallery.json and managed from /admin/. -->
-    </div>
+<!-- NEW SHOP DESIGNS GALLERY -->
+<section class="shop-gallery" id="gallery" aria-labelledby="shop-title">
+  <div class="shop-wrap">
+    <div class="shop-eyebrow">CORNERSTONE TACTICAL / CUSTOM ENGRAVING</div>
+    <div class="shop-heading"><div><h2 id="shop-title">Find Your Design<span class="shop-dot">.</span></h2><p>Real engravings. Your magazine. Made to order.</p></div><div class="shop-stat"><strong>01 / 03</strong><span>CHOOSE A DESIGN · REQUEST AN ORDER · WE ENGRAVE</span></div></div>
+    <div class="shop-toolbar"><p class="shop-instruction">Choose a design, then select your magazine type to see the price.</p><span class="shop-count" id="shop-count" aria-live="polite"></span></div>
+    <div class="shop-grid" id="shop-grid" aria-live="polite"><p>Loading designs…</p></div>
+    <section class="custom-design-panel" id="custom-design" aria-labelledby="custom-design-title">
+      <div class="custom-design-eyebrow">DON'T SEE YOUR DESIGN?</div>
+      <h3 id="custom-design-title">Make It Yours<span class="shop-dot">.</span></h3>
+      <p class="custom-design-lead">Have an idea of your own? Request a custom engraving designed for you.</p>
+      <div class="custom-deposit-highlight"><strong>$10</strong><span>DESIGN DEPOSIT<br><small>Applied toward your magazine purchase when you proceed with the order.</small></span></div>
+      <h4>Custom Design Policy</h4>
+      <ul class="custom-policy-list">
+        <li>A $10 deposit is required <strong>before design work begins</strong>. </li>
+        <li>The deposit is <strong>credited toward your final magazine purchase</strong> if you approve the design and place the order.</li>
+        <li>Once design work begins, the deposit is <strong>nonrefundable</strong> if you change your mind, decline an achievable design, or stop responding.</li>
+        <li>If Cornerstone Tactical cannot reasonably produce a design that meets your original requirements, <strong>your $10 deposit will be refunded in full</strong>.</li>
+        <li>No magazine is engraved until you approve the design and pay the remaining order balance. Availability and shipping eligibility must also be confirmed.</li>
+      </ul>
+      <form id="custom-design-form" class="custom-design-form">
+        <label for="custom-magazine">Preferred magazine</label>
+        <select id="custom-magazine" required><option value="">Choose magazine type</option><option value="5.56 PMAG — $30">5.56 PMAG — $30</option><option value=".300 BLK PMAG — $40">.300 BLK PMAG — $40</option><option value="AK magazine — $40 (subject to design compatibility)">AK magazine — $40 (subject to design compatibility)</option></select>
+        <label for="custom-idea">Describe your design idea</label>
+        <textarea id="custom-idea" rows="4" maxlength="2000" required placeholder="Tell us what you'd like engraved, including any reference images you can share when we contact you."></textarea>
+        
+        <button type="submit" class="custom-request-button">REQUEST A CUSTOM DESIGN ↗</button>
+        <p class="custom-form-hint">Submitting this form is an inquiry only. No deposit is charged and no design work starts until we confirm your request and receive payment.</p>
+      </form>
+    </section>
+    <div class="shop-shade-note"><strong>PLEASE NOTE — ENGRAVING APPEARANCE</strong><p>Laser engraving shades and contrast can vary from the photographs shown. Differences in material, finish, and engraving conditions are normal; exact color or shade matching is not guaranteed.</p></div>
+    <div class="shop-footer"><p>Price excludes shipping. Production typically takes 3–5 business days before shipping. Availability and destination restrictions are confirmed before payment.</p></div>
 </section>
-
-<div class="gallery-lightbox" id="gallery-lightbox" aria-hidden="true" role="dialog" aria-label="Work gallery image viewer">
-    <button class="gallery-lightbox-close" type="button" aria-label="Close image viewer">&times;</button>
-    <button class="gallery-lightbox-prev" type="button" aria-label="Previous image">&#10094;</button>
-    <img class="gallery-lightbox-image" src="" alt="">
-    <button class="gallery-lightbox-next" type="button" aria-label="Next image">&#10095;</button>
-</div>
-
+<div class="shop-modal" id="shop-modal" role="dialog" aria-modal="true" aria-label="Engraving design preview" aria-hidden="true"><div class="shop-modal-inner"><button class="shop-modal-close" type="button" aria-label="Close preview">×</button><img class="shop-modal-image" alt=""><div class="shop-modal-info"><h3 class="shop-modal-title"></h3><p class="shop-modal-description"></p><a class="shop-modal-order" href="#contact">Ask About This Design ↗</a></div></div></div>
 <!-- PRICING -->
 
 <section class="pricing" id="pricing">
@@ -247,9 +263,7 @@
 
             <ul>
 
-                <li>✓ Suppressors</li>
-                <li>✓ Short Barrel Rifles</li>
-                <li>✓ Short Barrel Shotguns</li>
+            
                
 
             </ul>

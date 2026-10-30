@@ -1,0 +1,9 @@
+Version 7 changes from v6:
+- Removed two-included-revisions rule and $10 additional-revision charge from Make It Yours.
+- Kept $10 custom design deposit, credit, and refund rules.
+- Updated custom deposit-policy acknowledgment to omit revisions.
+- Removed engraving-shade checkbox and blocking pop-up.
+- Kept the visible engraving shade disclaimer in the gallery.
+- Request This Design now goes straight to the contact form.
+- Removed shade acknowledgment from prefilled inquiry.
+- No live website changes.
