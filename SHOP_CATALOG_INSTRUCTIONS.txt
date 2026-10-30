@@ -1,0 +1,8 @@
+ADDING A NEW DESIGN
+1. Upload the JPG image to images/shop/ in GitHub.
+2. Open data/shop.json and add a new object before the final closing ]. Copy an existing entry and change id (unique), name, image (images/shop/your-file.jpg), alt, and supportedMagazines.
+3. supportedMagazines may contain "556", "300", and/or "ak". Preserve commas and JSON syntax.
+4. Commit both the photo and shop.json. No script.js edits required.
+
+REMOVING OLD GITHUB FILES
+Uploading this ZIP does not delete old repository files. Delete the obsolete documentation, admin/, images/gallery/, and data/gallery.json separately from GitHub after the new site is working.
