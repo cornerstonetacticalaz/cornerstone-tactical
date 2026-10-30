@@ -1,1 +1,0 @@
-Version 9: Hide customer-visible design names in cards and photo previews. Selected design inquiry includes direct absolute photo URL, internal design reference, magazine selection and price in Formspree message and structured fields. Photo link is provided rather than an embedded image attachment (Formspree email rendering cannot be guaranteed). No live site changes.

@@ -1,1 +1,0 @@
-Gallery v3: AK is hidden by default on all five provisional design cards. To enable AK for a verified design, change that product's supportedMagazines array in script.js from ['556', '300'] to ['556', '300', 'ak']. Confirm all compatibility before publishing. Prices: 5.56 $30, .300 BLK $40, AK $40; shipping extra.
