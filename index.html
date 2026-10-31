@@ -24,9 +24,9 @@
 
   gtag('config', 'G-GX65HY13RM');
 </script>
-</head>
+<style>body.age-gate-active{overflow:hidden}#age-gate:not([hidden]){display:flex}#age-gate[hidden]{display:none}</style></head>
 
-<body>
+<body class="age-gate-active"><div id="age-gate" class="age-gate" role="dialog" aria-modal="true" aria-labelledby="age-gate-title"><div class="age-gate-panel"><div class="age-gate-eyebrow">CORNERSTONE TACTICAL</div><h2 id="age-gate-title">Age Confirmation</h2><p>By continuing, you confirm that you are at least 18 years of age.</p><div class="age-gate-actions"><button id="age-yes" type="button">YES — CONTINUE</button><button id="age-no" type="button">NO — EXIT TO GOOGLE</button></div></div></div>
 
 <header>
 
@@ -61,6 +61,9 @@
     </nav>
 
 </header>
+<a class="floating-cart" id="floating-cart" href="#order-summary" aria-label="View order summary, 0 items" aria-live="polite"><span class="floating-cart-icon" aria-hidden="true">🛒</span><span class="floating-cart-label">View Cart</span><span class="floating-cart-count" id="floating-cart-count">0</span></a>
+<div class="cart-feedback" id="cart-feedback" role="status" aria-live="polite" aria-atomic="true"></div>
+
 
 <section class="hero" id="home">
 
@@ -163,8 +166,9 @@
   <div class="shop-wrap">
     <div class="shop-eyebrow">CORNERSTONE TACTICAL / CUSTOM ENGRAVING</div>
     <div class="shop-heading"><div><h2 id="shop-title">Find Your Design<span class="shop-dot">.</span></h2><p>Real engravings. Your magazine. Made to order.</p></div><div class="shop-stat"><strong>01 / 03</strong><span>CHOOSE A DESIGN · REQUEST AN ORDER · WE ENGRAVE</span></div></div>
-    <div class="shop-toolbar"><p class="shop-instruction">Choose a design, then select your magazine type to see the price.</p><span class="shop-count" id="shop-count" aria-live="polite"></span></div>
+    <div class="shop-toolbar"><p class="shop-instruction">Choose a magazine type, then add multiple designs to your order request.</p><span class="shop-count" id="shop-count" aria-live="polite"></span></div>
     <div class="shop-grid" id="shop-grid" aria-live="polite"><p>Loading designs…</p></div>
+    <section class="order-summary" id="order-summary" aria-labelledby="order-heading"><div class="order-heading"><h3 id="order-heading">Order Summary <span id="order-count">(0)</span></h3><span>Shipping calculated separately</span></div><p id="order-empty">No designs added yet. Choose a magazine type and select Add to Order.</p><div id="order-items"></div><div class="order-state-wrap"><label for="order-state">Shipping State <span aria-hidden="true">*</span></label><select id="order-state" name="shipping_state" required><option value="">Select shipping state</option><option value="Alabama">Alabama</option><option value="Alaska">Alaska</option><option value="Arizona">Arizona</option><option value="Arkansas">Arkansas</option><option value="Florida">Florida</option><option value="Georgia">Georgia</option><option value="Idaho">Idaho</option><option value="Indiana">Indiana</option><option value="Iowa">Iowa</option><option value="Kansas">Kansas</option><option value="Kentucky">Kentucky</option><option value="Louisiana">Louisiana</option><option value="Maine">Maine</option><option value="Michigan">Michigan</option><option value="Minnesota">Minnesota</option><option value="Mississippi">Mississippi</option><option value="Missouri">Missouri</option><option value="Montana">Montana</option><option value="Nebraska">Nebraska</option><option value="Nevada">Nevada</option><option value="New Hampshire">New Hampshire</option><option value="New Mexico">New Mexico</option><option value="North Carolina">North Carolina</option><option value="North Dakota">North Dakota</option><option value="Ohio">Ohio</option><option value="Oklahoma">Oklahoma</option><option value="Pennsylvania">Pennsylvania</option><option value="South Carolina">South Carolina</option><option value="South Dakota">South Dakota</option><option value="Tennessee">Tennessee</option><option value="Texas">Texas</option><option value="Utah">Utah</option><option value="Virginia">Virginia</option><option value="West Virginia">West Virginia</option><option value="Wisconsin">Wisconsin</option><option value="Wyoming">Wyoming</option></select><p id="order-state-help" class="order-state-help">Only shipping destinations currently accepted by Cornerstone Tactical are listed. All orders are subject to final eligibility review.</p></div><div class="order-footer"><strong id="order-subtotal">Subtotal: $0.00</strong><button type="button" id="order-send" disabled>REQUEST ORDER ↗</button></div><p class="order-note">One inquiry for all designs. No payment is collected online. Final availability, shipping and eligibility are confirmed before payment.</p></section>
     <section class="custom-design-panel" id="custom-design" aria-labelledby="custom-design-title">
       <div class="custom-design-eyebrow">DON'T SEE YOUR DESIGN?</div>
       <h3 id="custom-design-title">Make It Yours<span class="shop-dot">.</span></h3>
@@ -446,6 +450,7 @@
 </div>
 
 </footer>
+<script src="data/shop-preview.js"></script>
 <script src="script.js"></script>
 
 <a href="tel:+16029350340" class="call-button">
