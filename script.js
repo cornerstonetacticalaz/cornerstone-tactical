@@ -40,8 +40,8 @@ document.querySelectorAll(".faq-question").forEach(button => {
     grid.textContent = 'Designs could not be loaded. Please try again shortly.';
     return;
   }
-  // Only the three confirmed AK designs offer AK. Other designs currently offer PMAG choices.
-  const options = [{id:'556',label:'5.56 PMAG',price:30},{id:'300',label:'.300 BLK PMAG',price:40},{id:'ak',label:'AK magazine',price:40}];
+  // AK availability remains limited to compatible designs; 40-round PMAGs are offered for every design.
+  const options = [{id:'556',label:'5.56 PMAG',price:30},{id:'300',label:'.300 BLK PMAG',price:40},{id:'40',label:'40-round PMAG',price:40},{id:'ak',label:'AK magazine',price:40}];
   let lastFocus = null;
   // The engraving appearance disclaimer remains visibly displayed on the page.
   // Customers can request a design without an additional acknowledgment step.
