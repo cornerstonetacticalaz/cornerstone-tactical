@@ -661,7 +661,11 @@
     "name": "Beauty to the Corps",
     "image": "images/shop/56-beauty-to-the-corps.jpg",
     "alt": "Beauty to the Corps engraved magazine by Cornerstone Tactical",
-    "supportedMagazines": ["556", "300", "40"],
+    "supportedMagazines": [
+      "556",
+      "300",
+      "40"
+    ],
     "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
   },
   {
@@ -669,7 +673,11 @@
     "name": "Sylvester",
     "image": "images/shop/57-sylvester.jpg",
     "alt": "Sylvester engraved magazine by Cornerstone Tactical",
-    "supportedMagazines": ["556", "300", "40"],
+    "supportedMagazines": [
+      "556",
+      "300",
+      "40"
+    ],
     "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
   },
   {
@@ -677,7 +685,11 @@
     "name": "Aztec",
     "image": "images/shop/58-aztec.jpg",
     "alt": "Aztec engraved magazine by Cornerstone Tactical",
-    "supportedMagazines": ["556", "300", "40"],
+    "supportedMagazines": [
+      "556",
+      "300",
+      "40"
+    ],
     "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
   },
   {
@@ -685,7 +697,11 @@
     "name": "AfterDark",
     "image": "images/shop/59-afterdark.jpg",
     "alt": "AfterDark engraved magazine by Cornerstone Tactical",
-    "supportedMagazines": ["556", "300", "40"],
+    "supportedMagazines": [
+      "556",
+      "300",
+      "40"
+    ],
     "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
   },
   {
@@ -693,7 +709,11 @@
     "name": "Flygirl",
     "image": "images/shop/60-flygirl.jpg",
     "alt": "Flygirl engraved magazine by Cornerstone Tactical",
-    "supportedMagazines": ["556", "300", "40"],
+    "supportedMagazines": [
+      "556",
+      "300",
+      "40"
+    ],
     "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
   },
   {
@@ -701,7 +721,251 @@
     "name": "UFO",
     "image": "images/shop/61-ufo.jpg",
     "alt": "UFO engraved magazine by Cornerstone Tactical",
-    "supportedMagazines": ["556", "300", "40"],
+    "supportedMagazines": [
+      "556",
+      "300",
+      "40"
+    ],
+    "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
+  },
+  {
+    "id": "design-62",
+    "name": "MichaelZ",
+    "image": "images/shop/62-michaelz.jpg",
+    "alt": "MichaelZ engraved magazine by Cornerstone Tactical",
+    "supportedMagazines": [
+      "556",
+      "300",
+      "40"
+    ],
+    "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
+  },
+  {
+    "id": "design-63",
+    "name": "Gaz",
+    "image": "images/shop/63-gaz.jpg",
+    "alt": "Gaz engraved magazine by Cornerstone Tactical",
+    "supportedMagazines": [
+      "556",
+      "300",
+      "40"
+    ],
+    "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
+  },
+  {
+    "id": "design-64",
+    "name": "ChuckyZ",
+    "image": "images/shop/64-chuckyz.jpg",
+    "alt": "ChuckyZ engraved magazine by Cornerstone Tactical",
+    "supportedMagazines": [
+      "556",
+      "300",
+      "40"
+    ],
+    "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
+  },
+  {
+    "id": "design-65",
+    "name": "MCBullDog",
+    "image": "images/shop/65-mcbulldog.jpg",
+    "alt": "MCBullDog engraved magazine by Cornerstone Tactical",
+    "supportedMagazines": [
+      "556",
+      "300",
+      "40"
+    ],
+    "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
+  },
+  {
+    "id": "design-66",
+    "name": "USMC",
+    "image": "images/shop/66-usmc.jpg",
+    "alt": "USMC engraved magazine by Cornerstone Tactical",
+    "supportedMagazines": [
+      "556",
+      "300",
+      "40"
+    ],
+    "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
+  },
+  {
+    "id": "design-67",
+    "name": "Warbird",
+    "image": "images/shop/67-warbird.jpg",
+    "alt": "Warbird engraved magazine by Cornerstone Tactical",
+    "supportedMagazines": [
+      "556",
+      "300",
+      "40"
+    ],
+    "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
+  },
+  {
+    "id": "design-68",
+    "name": "BombshellBetty",
+    "image": "images/shop/68-bombshellbetty.jpg",
+    "alt": "BombshellBetty engraved magazine by Cornerstone Tactical",
+    "supportedMagazines": [
+      "556",
+      "300",
+      "40"
+    ],
+    "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
+  },
+  {
+    "id": "design-69",
+    "name": "Price",
+    "image": "images/shop/69-price.jpg",
+    "alt": "Price engraved magazine by Cornerstone Tactical",
+    "supportedMagazines": [
+      "556",
+      "300",
+      "40"
+    ],
+    "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
+  },
+  {
+    "id": "design-70",
+    "name": "FreddyZ",
+    "image": "images/shop/70-freddyz.jpg",
+    "alt": "FreddyZ engraved magazine by Cornerstone Tactical",
+    "supportedMagazines": [
+      "556",
+      "300",
+      "40"
+    ],
+    "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
+  },
+  {
+    "id": "design-71",
+    "name": "CaliGirl",
+    "image": "images/shop/71-caligirl.jpg",
+    "alt": "CaliGirl engraved magazine by Cornerstone Tactical",
+    "supportedMagazines": [
+      "556",
+      "300",
+      "40"
+    ],
+    "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
+  },
+  {
+    "id": "design-72",
+    "name": "RosieR",
+    "image": "images/shop/72-rosier.jpg",
+    "alt": "RosieR engraved magazine by Cornerstone Tactical",
+    "supportedMagazines": [
+      "556",
+      "300",
+      "40"
+    ],
+    "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
+  },
+  {
+    "id": "design-73",
+    "name": "Renegade Rosie",
+    "image": "images/shop/73-renegade-rosie.jpg",
+    "alt": "Renegade Rosie engraved magazine by Cornerstone Tactical",
+    "supportedMagazines": [
+      "556",
+      "300",
+      "40"
+    ],
+    "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
+  },
+  {
+    "id": "design-74",
+    "name": "RandM",
+    "image": "images/shop/74-randm.jpg",
+    "alt": "RandM engraved magazine by Cornerstone Tactical",
+    "supportedMagazines": [
+      "556",
+      "300",
+      "40"
+    ],
+    "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
+  },
+  {
+    "id": "design-75",
+    "name": "TimesTicking",
+    "image": "images/shop/75-timesticking.jpg",
+    "alt": "TimesTicking engraved magazine by Cornerstone Tactical",
+    "supportedMagazines": [
+      "556",
+      "300",
+      "40"
+    ],
+    "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
+  },
+  {
+    "id": "design-76",
+    "name": "TimesUP",
+    "image": "images/shop/76-timesup.jpg",
+    "alt": "TimesUP engraved magazine by Cornerstone Tactical",
+    "supportedMagazines": [
+      "556",
+      "300",
+      "40"
+    ],
+    "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
+  },
+  {
+    "id": "design-77",
+    "name": "PinUpRays",
+    "image": "images/shop/77-pinuprays.jpg",
+    "alt": "PinUpRays engraved magazine by Cornerstone Tactical",
+    "supportedMagazines": [
+      "556",
+      "300",
+      "40"
+    ],
+    "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
+  },
+  {
+    "id": "design-78",
+    "name": "TrustNoOne",
+    "image": "images/shop/78-trustnoone.jpg",
+    "alt": "TrustNoOne engraved magazine by Cornerstone Tactical",
+    "supportedMagazines": [
+      "556",
+      "300",
+      "40"
+    ],
+    "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
+  },
+  {
+    "id": "design-79",
+    "name": "Cas",
+    "image": "images/shop/79-cas.jpg",
+    "alt": "Cas engraved magazine by Cornerstone Tactical",
+    "supportedMagazines": [
+      "556",
+      "300",
+      "40"
+    ],
+    "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
+  },
+  {
+    "id": "design-80",
+    "name": "JasonZ",
+    "image": "images/shop/80-jasonz.jpg",
+    "alt": "JasonZ engraved magazine by Cornerstone Tactical",
+    "supportedMagazines": [
+      "556",
+      "300",
+      "40"
+    ],
+    "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
+  },
+  {
+    "id": "design-81",
+    "name": "Liberty",
+    "image": "images/shop/81-liberty.jpg",
+    "alt": "Liberty engraved magazine by Cornerstone Tactical",
+    "supportedMagazines": [
+      "556",
+      "300",
+      "40"
+    ],
     "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
   }
 ]
