@@ -1135,5 +1135,47 @@
       "40"
     ],
     "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
+  },
+  {
+    "id": "design-96", "name": "Hex Decay", "image": "images/shop/96-hex-decay.jpg",
+    "alt": "Hex Decay engraved magazine by Cornerstone Tactical",
+    "supportedMagazines": ["556", "300", "40"],
+    "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
+  },
+  {
+    "id": "design-97", "name": "Plague Doctor", "image": "images/shop/97-plague-doctor.jpg",
+    "alt": "Plague Doctor engraved magazine by Cornerstone Tactical",
+    "supportedMagazines": ["556", "300", "40"],
+    "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
+  },
+  {
+    "id": "design-98", "name": "Minuteman Flag", "image": "images/shop/98-minuteman-flag.jpg",
+    "alt": "Minuteman Flag engraved magazine by Cornerstone Tactical",
+    "supportedMagazines": ["556", "300", "40"],
+    "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
+  },
+  {
+    "id": "design-99", "name": "Crusader", "image": "images/shop/99-crusader.jpg",
+    "alt": "Crusader engraved magazine by Cornerstone Tactical",
+    "supportedMagazines": ["556", "300", "40"],
+    "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
+  },
+  {
+    "id": "design-100", "name": "Minuteman White", "image": "images/shop/100-minuteman-white.jpg",
+    "alt": "Minuteman White engraved magazine by Cornerstone Tactical",
+    "supportedMagazines": ["556", "300", "40"],
+    "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
+  },
+  {
+    "id": "design-101", "name": "Savior", "image": "images/shop/101-savior.jpg",
+    "alt": "Savior engraved magazine by Cornerstone Tactical",
+    "supportedMagazines": ["556", "300", "40"],
+    "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
+  },
+  {
+    "id": "design-102", "name": "Gorilla Warfare", "image": "images/shop/102-gorilla-warfare.jpg",
+    "alt": "Gorilla Warfare engraved magazine by Cornerstone Tactical",
+    "supportedMagazines": ["556", "300", "40"],
+    "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
   }
 ]
