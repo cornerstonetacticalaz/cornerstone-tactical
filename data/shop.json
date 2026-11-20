@@ -1161,7 +1161,7 @@
     "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
   },
   {
-    "id": "design-100", "name": "Minuteman White", "image": "images/shop/100-minuteman-white.jpg",
+    "id": "design-100", "name": "Minuteman White", "image": "images/shop/100-minuteman-white.jpg?v=2",
     "alt": "Minuteman White engraved magazine by Cornerstone Tactical",
     "supportedMagazines": ["556", "300", "40"],
     "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
@@ -1173,7 +1173,7 @@
     "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
   },
   {
-    "id": "design-102", "name": "Gorilla Warfare", "image": "images/shop/102-gorilla-warfare.jpg",
+    "id": "design-102", "name": "Gorilla Warfare", "image": "images/shop/102-gorilla-warfare.jpg?v=2",
     "alt": "Gorilla Warfare engraved magazine by Cornerstone Tactical",
     "supportedMagazines": ["556", "300", "40"],
     "description": "Actual Cornerstone Tactical engraving photo. Contact us to confirm magazine availability, engraving compatibility, and shipping eligibility before payment."
